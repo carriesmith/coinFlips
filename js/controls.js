@@ -1,6 +1,8 @@
 // Controller input / buttons
-// There's a lot of repeated code between the three input groups
-// should revisit and DRY this up!
+
+// TO DO: 
+//   * Repeated code between the three input groups, refactor to functions.
+//   * At a few combinations of p / nFlips the bar width becomes very narrow.
 
 // Change text-input for coin probability of heads
 $('#prob-text').on('change', function(event) { 
