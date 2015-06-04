@@ -1,0 +1,87 @@
+<!-- TODO
+  - y-axis responsive to input variables
+  - x-axis upper / lower limits set to +/- 4SD if n > 60
+  - tooltip
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coin Flips</title>
+  
+  <!-- Latest compiled and minified CSS BOOTSTRAP  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!-- Optional theme BOOTSTRAP -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+  <!-- coinFlips css -->
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="chart-container">
+      <div id="hist-chart"></div>
+    </div>
+    <div class="controls">
+
+      <label for="pCoin">Probability of Heads</label>
+        <div class="input-group prob-input">
+          <span class="input-group-btn">
+            <button id="prob-down" class="btn btn-default" type="button">-</button>
+          </span>
+          <input id="prob-text" type="text" class="form-control" placeholder=".5">
+          <span class="input-group-btn">
+            <button id="prob-up" class="btn btn-default" type="button">+</button>
+          </span>
+        </div><!-- /input-group -->
+
+      <label for="nFlips">Number of Coin Flips in a Sample</label>
+      <div class="input-group nflips-input">
+        <span class="input-group-btn">
+          <button id="nflips-down" class="btn btn-default" type="button">-</button>
+        </span>
+        <input id="nflips-text" type="text" class="form-control" placeholder="40">
+        <span class="input-group-btn">
+          <button id="nflips-up" class="btn btn-default nflips-up" type="button">+</button>
+        </span>
+      </div><!-- /input-group -->
+
+      <label for="nSamples">Number of Samples</label>
+      <div class="input-group nsamples-input">
+        <span class="input-group-btn">
+          <button id="nsamples-down" class="btn btn-default" type="button">-</button>
+        </span>
+        <input id="nsamples-text" type="text" class="form-control" placeholder="1000">
+        <span class="input-group-btn">
+          <button id="nsamples-up" class="btn btn-default" type="button">+</button>
+        </span>
+      </div><!-- /input-group -->
+
+      <button class="goAgain">Again!</button>
+
+      <img src="http://img1.wikia.nocookie.net/__cb20130929223343/glee/images/d/d5/281735_1342370254-coin-flip.gif.gif">
+
+    </div>
+  </div>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/controls.js"></script>
+  <script>
+
+    var n = 40;
+    var p = .5;
+    var iterations = 1000;
+    $(function() {
+        drawChart(n, p, iterations);
+    });
+
+  </script>
+
+</body>
+</html>
